@@ -6,7 +6,16 @@ class BoundingBoxCustomPainter extends CustomPainter {
   BoundingBoxCustomPainter({required this.detectedObjects});
 
   @override
-  void paint(Canvas canvas, Size size) {}
+  void paint(Canvas canvas, Size size) {
+    final Paint myPaint = Paint()
+      ..color = Colors.red
+      ..strokeWidth = 2;
+
+    for (var detectedObject in detectedObjects) {
+      canvas.drawRect(
+          detectedObject.rect, myPaint..style = PaintingStyle.stroke);
+    }
+  }
 
   @override
   bool shouldRepaint(covariant BoundingBoxCustomPainter oldDelegate) {

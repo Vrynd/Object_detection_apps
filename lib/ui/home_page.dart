@@ -29,17 +29,19 @@ class HomePage extends StatelessWidget {
               CustomPaint(
                 foregroundPainter: BoundingBoxCustomPainter(detectedObjects: [
                   DetectedObject(
-                      rect: const Rect.fromLTRB(98, 23, 248, 215),
+                      rect: const Rect.fromLTRB(160, 23, 308, 217),
                       text: 'Laptop',
-                      confidenceScore: 0.64
-                  )
+                      confidenceScore: 0.64)
                 ]),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(20),
-                  child: Image.asset(
-                    "assets/macbook-air.jpg",
-                    fit: BoxFit.cover,
-                    width: double.infinity,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(20),
+                    child: Image.asset(
+                      "assets/macbook-air.jpg",
+                      fit: BoxFit.cover,
+                      width: 350,
+                    ),
                   ),
                 ),
               ),
