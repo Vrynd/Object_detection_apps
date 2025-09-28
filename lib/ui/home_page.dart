@@ -1,3 +1,5 @@
+import 'package:bounding_box_app/models/detected_object.dart';
+import 'package:bounding_box_app/utils/bounding_box_custom_painter.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,12 +26,21 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  "assets/macbook-air.jpg",
-                  fit: BoxFit.cover,
-                  width: double.infinity,
+              CustomPaint(
+                foregroundPainter: BoundingBoxCustomPainter(detectedObjects: [
+                  DetectedObject(
+                      rect: const Rect.fromLTRB(98, 23, 248, 215),
+                      text: 'Laptop',
+                      confidenceScore: 0.64
+                  )
+                ]),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    "assets/macbook-air.jpg",
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                  ),
                 ),
               ),
             ],
