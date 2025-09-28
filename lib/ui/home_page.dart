@@ -29,9 +29,30 @@ class HomePage extends StatelessWidget {
               CustomPaint(
                 foregroundPainter: BoundingBoxCustomPainter(detectedObjects: [
                   DetectedObject(
-                      rect: const Rect.fromLTRB(160, 23, 308, 217),
-                      text: 'Laptop',
-                      confidenceScore: 0.64)
+                    text: 'Laptop',
+                    confidenceScore: 0.64,
+                    rect: const Rect.fromLTRB(160, 23, 308, 217),
+                  ),
+                  DetectedObject(
+                    text: "Phone",
+                    confidenceScore: 0.57,
+                    rect: const Rect.fromLTRB(315, 103, 347, 154),
+                  ),
+                  DetectedObject(
+                    text: "Coffe",
+                    confidenceScore: 0.60,
+                    rect: const Rect.fromLTRB(315, 158, 386, 216),
+                  ),
+                  DetectedObject(
+                    text: "Keyboard",
+                    confidenceScore: 0.48,
+                    rect: const Rect.fromLTRB(170, 122, 297, 174),
+                  ),
+                  DetectedObject(
+                    text: "Note",
+                    confidenceScore: 0.43,
+                    rect: const Rect.fromLTRB(64, 114, 160, 214),
+                  ),
                 ]),
                 child: Align(
                   alignment: Alignment.center,
